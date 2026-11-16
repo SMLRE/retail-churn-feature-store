@@ -1,0 +1,67 @@
+{
+  "n_features": 48,
+  "n_groups": 7,
+  "features_per_group": {
+    "g1": 10,
+    "g2": 8,
+    "g3": 6,
+    "g4": 5,
+    "g5": 6,
+    "g6": 6,
+    "g7": 7
+  },
+  "snapshots": [
+    15,
+    18
+  ],
+  "customers_per_snapshot": [
+    11670,
+    11162
+  ],
+  "validation_passed": {
+    "grain": "9/9",
+    "join_integrity": "4/4",
+    "range_null": "48/48"
+  },
+  "drift_status_counts": {
+    "stable": 47,
+    "drift": 1,
+    "watch": 0
+  },
+  "models": {
+    "churn_flag": {
+      "auc_all_48": 0.7786,
+      "auc_drop_without_group": {
+        "g1": 0.0023,
+        "g2": 0.0072,
+        "g3": 0.0297,
+        "g4": 0.0023,
+        "g5": 0.0008,
+        "g6": 0.0353,
+        "g7": 0.0036
+      },
+      "rate_train": 0.02,
+      "rate_test": 0.0186
+    },
+    "early_warning_flag": {
+      "auc_all_48": 0.7663,
+      "auc_drop_without_group": {
+        "g1": -0.0,
+        "g2": -0.0044,
+        "g3": 0.0249,
+        "g4": 0.0006,
+        "g5": 0.0012,
+        "g6": 0.0352,
+        "g7": -0.0069
+      },
+      "rate_train": 0.0255,
+      "rate_test": 0.0233
+    }
+  },
+  "churn_rate_by_flag_count": {
+    "0": 0.0127,
+    "1": 0.076,
+    "2": 0.5625,
+    "3": 0.3333
+  }
+}

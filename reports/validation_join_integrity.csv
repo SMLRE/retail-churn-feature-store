@@ -1,0 +1,5 @@
+check_name,failures,ok
+txn rows without account,0,True
+balance rows without account,0,True
+accounts without customer,0,True
+channel rows for unknown customer,0,True

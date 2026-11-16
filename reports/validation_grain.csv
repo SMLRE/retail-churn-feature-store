@@ -1,0 +1,10 @@
+table_name,rows,customers,ok
+population,11162,11162,True
+g1_transactional,11162,11162,True
+g2_balance_product,11162,11162,True
+g3_channel_sentiment,11162,11162,True
+g4_geo_behavioural,11162,11162,True
+g5_lifestage,11162,11162,True
+g6_network_relationship,11162,11162,True
+g7_risk_layer,11162,11162,True
+feature_store,11162,11162,True
