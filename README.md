@@ -1,4 +1,6 @@
-# Retail Churn Feature Store: 48 Features, 7 Groups, Validated
+# Retail Churn Early-Warning & Feature Store: 48 Features, 7 Groups, Validated
+
+[![CI](https://github.com/SMLRE/retail-churn-feature-store/actions/workflows/ci.yml/badge.svg)](https://github.com/SMLRE/retail-churn-feature-store/actions/workflows/ci.yml)
 
 A single, validated churn feature layer for retail banking. It provides **48 features in 7 behavioural groups**, built from **six source tables joined through the account master** over a **12-month observation window**, with a graded target structure and a validation suite (grain, join integrity, null and range checks, PSI drift).
 
@@ -6,14 +8,15 @@ A single, validated churn feature layer for retail banking. It provides **48 fea
 
 ![Group ablation](reports/figures/group_ablation.png)
 
-## In production (the real project, Jul–Aug 2026)
+## In production (the real project, 2026)
 
 | | |
 |---|---|
+| **Early-warning model** | Replaced the old **90-day dormancy rule** with a **180-day true-dormancy target**, so the model learns real exits rather than pauses. It held **0.943 ROC-AUC on an unseen out-of-time quarter** |
 | **Features** | **48 features**, **12-month observation window** |
 | **Sources** | **Six Oracle source tables**, joined through the **account master** |
 | **Architecture** | Seven groups: transactional behaviour, balance/product, **channel sentiment (via the CSS model)**, **geo-behavioural (via the Customer Residence Inference model)**, life-stage/demographic, network/relationship, risk-scoring layer |
-| **Target** | Churn = **90+ days of dormancy**, with a **graded target structure**: binary flag + survival label + **45–60-day early warning** |
+| **Target design** | **Graded target structure**: binary flag + survival label + **45–60-day early warning** |
 | **Validation** | Full SQL pipeline with validation queries. Dormancy outcomes in the historical data mart were confirmed as a usable labelled source |
 
 This repo reproduces the seven-group architecture, the account-master join pattern, the graded targets and the validation layer.
@@ -81,4 +84,4 @@ notebooks/walkthrough.ipynb
 
 ## Author
 
-**Oluwasemilore Sadare**, Senior Data Scientist · [LinkedIn](https://www.linkedin.com/in/oluwasemilore-sadare) · [GitHub](https://github.com/SMLRE)
+**Oluwasemilore Sadare**, Data Scientist · [LinkedIn](https://www.linkedin.com/in/oluwasemilore-sadare) · [GitHub](https://github.com/SMLRE)
